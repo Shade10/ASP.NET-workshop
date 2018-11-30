@@ -1,7 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Przyjęcie Sylwestrowe";
 }
 
-<h2>Hello World</h2>
 
+<div>
+    <h3>@ViewBag.Greeting</h3>
+
+    <p>
+        Zapraszamy na przyjęcie karnawałowe do Ulki
+    </p>
+    @Html.ActionLink("Wiślij RSVP", "RsvpForm")
+</div>

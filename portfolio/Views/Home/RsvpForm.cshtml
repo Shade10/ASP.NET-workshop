@@ -1,0 +1,26 @@
+﻿@model portfolio.Models.GuestResponse
+
+@{
+    ViewBag.Title = "RsvpForm";
+}
+
+<h2>RsvpForm</h2>
+
+@using (Html.BeginForm())
+{
+    <p>Imię i Nazwisko: @Html.TextBoxFor(x => x.Name) </p>
+    <p>Twój e-mail: @Html.TextBoxFor(x => x.Email) </p>
+    <p>Twój telefon: @Html.TextBoxFor(x => x.Phone) </p>
+    <p>Imię i Nazwisko: @Html.TextBoxFor(x => x.WillAttend) </p>
+
+    <p>
+        Czy przyjdziesz na impreze?
+        @Html.DropDownListFor(x => x.WillAttend, new[]
+        {
+            new SelectListItem(){Text = "Tak przyjdę.", Value=bool.TrueString},
+            new SelectListItem(){Text = "Nie, nie przyjdę.", Value=bool.FalseString},
+        }, "Wybierz opcjeę")
+    </p>
+    <input type="submit" value="Wyślij RSVP"/>
+}
+
