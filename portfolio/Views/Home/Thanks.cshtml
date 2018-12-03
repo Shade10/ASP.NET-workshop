@@ -4,5 +4,13 @@
     ViewBag.Title = "Thanks";
 }
 
-<h2>Thanks</h2>
 
+<div>
+    <h1>Dziękujęmy, @Model.Name</h1>
+
+    @if (Model.WillAttend == true) {
+        @:Cieszymy się, że przyjdziesz na imprezę
+    } else {
+        @:Przykro nam że cię nie będzie
+    }
+</div>

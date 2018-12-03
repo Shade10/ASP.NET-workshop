@@ -5,34 +5,32 @@ using System.Web;
 using System.Web.Mvc;
 using AspWorkshop.Models;
 
-namespace AspWorkshop.Controllers
-{
-    public class HomeController : Controller
-    {
+namespace AspWorkshop.Controllers {
+    public class HomeController : Controller {
         // GET: Home
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             int hour = DateTime.Now.Hour;
 
             ViewBag.Greeting = hour < 17 ? "Dzień Dobry" : "Dobry Wieczór";
             return View();
         }
 
-        public ActionResult Project()
-        {
+        public ActionResult Project() {
             return View();
         }
 
         [HttpGet]
-        public ViewResult RsvpForm()
-        {
+        public ViewResult RsvpForm() {
             return View();
         }
 
         [HttpPost]
-        public ViewResult RsvpForm(GuestResponse guestResponse)
-        {
-            return View("Thanks", guestResponse);
+        public ViewResult RsvpForm(GuestResponse guestResponse) {
+            if (ModelState.IsValid) {
+                return View("Thanks", guestResponse);
+            } else {
+                return View();
+            }
         }
     }
 }
