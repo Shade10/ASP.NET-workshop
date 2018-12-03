@@ -3,12 +3,28 @@
     ViewBag.Title = "Przyjęcie Sylwestrowe";
 }
 
+<head>
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none
+        }
 
-<div>
-    <h3>@ViewBag.Greeting</h3>
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
 
-    <p>
+<div class="text-center">
+    <h2>
         Zapraszamy na przyjęcie karnawałowe do Ulki
-    </p>
-    @Html.ActionLink("Wiślij RSVP", "RsvpForm")
+    </h2>
+    <h3>
+        Ty też zostałeś zaproszony
+    </h3>
+    <div class="btn btn-success">
+        @Html.ActionLink("Wiślij RSVP", "RsvpForm")
+    </div>
+</div>
 </div>
