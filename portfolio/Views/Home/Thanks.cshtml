@@ -4,13 +4,21 @@
     ViewBag.Title = "Thanks";
 }
 
+<head>
+    <style>
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
 
-<div>
+<div class="text-center">
     <h1>Dziękujęmy, @Model.Name</h1>
-
-    @if (Model.WillAttend == true) {
-        @:Cieszymy się, że przyjdziesz na imprezę
-    } else {
-        @:Przykro nam że cię nie będzie
-    }
+    <div class="lead">
+        @if (Model.WillAttend == true) {
+            @:Cieszymy się, że przyjdziesz na imprezę
+        } else {
+            @:Przykro nam że cię nie będzie
+        }
+    </div>
 </div>
