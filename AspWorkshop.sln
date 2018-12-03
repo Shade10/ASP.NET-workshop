@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "portfolio", "portfolio\portfolio.csproj", "{2AB2CFB8-83DF-40F8-9697-2D5B38973A17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWorkshop", "portfolio\AspWorkshop.csproj", "{2AB2CFB8-83DF-40F8-9697-2D5B38973A17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
