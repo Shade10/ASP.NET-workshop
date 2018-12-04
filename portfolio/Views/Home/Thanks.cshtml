@@ -12,6 +12,21 @@
     </style>
 </head>
 
+@{
+    try {
+        WebMail.SmtpServer = "smtp.przyklad.pl";
+        WebMail.SmtpPort = 587;
+        WebMail.EnableSsl = true;
+        WebMail.UserName = "UserName";
+        WebMail.Password = "passwdUser";
+        WebMail.From = "rsvp@przyklad.pl";
+
+        WebMail.Send("marcin.kass10@gmail.com", "Powiadomienie RSVP", Model.Name + ((Model.WillAttend ?? false) ? "" : "nie"), "przyjdzie");
+    } catch (Exception) {
+        @:<b>Przepraszamy - nie możemy wysłać wiadomości</b>
+    }
+}
+
 <div class="text-center">
     <h1>Dziękujęmy, @Model.Name</h1>
     <div class="lead">
