@@ -83,5 +83,19 @@ namespace LanguageFeatures.Controllers {
             return View("Index", (object) String.Format("Razem koszyk: {0}, razem talica: {1}", cartTotal, arrayTotal));
         }
 
+        public ViewResult UseFilterExtensionMethod()
+        {
+            IEnumerable<Product> products = new ShoppingCart
+            {
+                Products = new List<Product>
+                {
+                    new Product {Name = "Kajak", Category = "Sporty wodne", Price = 275M},
+                    new Product {Name = "Kamizelka ratunkowa", Category = "Sporty wodne", Price = 48.95M},
+                    new Product {Name = "Piłka nożna", Category = "Piłka nożna", Price = 19.50M},
+                    new Product {Name = "Flaga narożna", Category = "Piłka nożna", Price = 34.95M}
+                }
+            };
+            return View();
+        }
     }
 }
