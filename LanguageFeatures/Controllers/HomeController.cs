@@ -31,5 +31,18 @@ namespace LanguageFeatures.Controllers {
             return View("Index", (object) String.Format("Kategoria: {0}", myProduct.category));
         }
 
+        public ViewResult CreateCollection()
+        {
+            string[] stringArray = {"jabłko", "pomarańcza", "gruszka"};
+            List<int> intList = new  List<int>{10, 20, 30, 40};
+
+            Dictionary<string, int> myDict = new Dictionary<string, int>
+            {
+                {"jbłko", 10 }, {"pomarańcza", 20}, {"gruszka", 30}
+            };
+
+            return View("Index", (object) stringArray[1]);
+        }
+
     }
 }
