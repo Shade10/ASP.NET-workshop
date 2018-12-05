@@ -31,10 +31,9 @@ namespace LanguageFeatures.Controllers {
             return View("Index", (object) String.Format("Kategoria: {0}", myProduct.category));
         }
 
-        public ViewResult CreateCollection()
-        {
-            string[] stringArray = {"jabłko", "pomarańcza", "gruszka"};
-            List<int> intList = new  List<int>{10, 20, 30, 40};
+        public ViewResult CreateCollection() {
+            string[] stringArray = { "jabłko", "pomarańcza", "gruszka" };
+            List<int> intList = new List<int> { 10, 20, 30, 40 };
 
             Dictionary<string, int> myDict = new Dictionary<string, int>
             {
@@ -42,6 +41,21 @@ namespace LanguageFeatures.Controllers {
             };
 
             return View("Index", (object) stringArray[1]);
+        }
+
+        public ViewResult UseExtension() {
+            ShoppingCart cart = new ShoppingCart {
+                Products = new List<Product>
+                {
+                    new Product {Name = "Kajak", Price = 275M},
+                    new Product {Name = "Kamizelka ratunkowa", Price = 48.95M},
+                    new Product {Name = "Pika nożna", Price = 19.50M},
+                    new Product {Name = "Flaga narożna", Price = 34.95M},
+                }
+            };
+            decimal cartTotal = cart.TotalPrices();
+
+            return View("Index", (object) String.Format("Razem: {0:c", cartTotal));
         }
 
     }
