@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWorkshop", "portfolio\AspWorkshop.csproj", "{2AB2CFB8-83DF-40F8-9697-2D5B38973A17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageFeatures", "LanguageFeatures\LanguageFeatures.csproj", "{F7DE523F-53CC-477F-99BE-10EE376F3EAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2AB2CFB8-83DF-40F8-9697-2D5B38973A17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB2CFB8-83DF-40F8-9697-2D5B38973A17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB2CFB8-83DF-40F8-9697-2D5B38973A17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DE523F-53CC-477F-99BE-10EE376F3EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DE523F-53CC-477F-99BE-10EE376F3EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DE523F-53CC-477F-99BE-10EE376F3EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DE523F-53CC-477F-99BE-10EE376F3EAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
