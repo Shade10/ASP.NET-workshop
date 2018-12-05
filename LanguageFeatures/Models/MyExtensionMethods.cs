@@ -20,5 +20,17 @@ namespace LanguageFeatures.Models {
                 }
             }
         }
+
+        public static IEnumerable<Product> Filter(this IEnumerable<Product> productEnum,
+            Func<Product, bool> selecorParam)
+        {
+            foreach (Product prod in productEnum)
+            {
+                if (selecorParam(prod))
+                {
+                    yield return prod;
+                }
+            }
+        }
     }
 }
