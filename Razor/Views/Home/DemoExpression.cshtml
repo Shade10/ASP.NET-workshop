@@ -1,0 +1,27 @@
+﻿@model Razor.Models.Product
+
+@{
+    ViewBag.Title = "DemoExpression";
+}
+
+<h2>DemoExpression</h2>
+
+<table>
+    <thead>
+        <tr><th>Właściwości</th><th>Wartość</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Nazwa</td><td>@Model.Name</td></tr>
+        <tr><td>Cena</td><td>@Model.Price</td></tr>
+        <tr><td>Ilość w magazynie</td><td>@ViewBag.ProductCount</td></tr>
+    </tbody>
+</table>
+
+<div data-="@ViewBag.ApplyDiscount" data-exps="@ViewBag.ExpressShip" data-splier="@ViewBag.Supplier">Element posiada atrybuty danych</div>
+
+Rabat: <input type="checkbox" checked="@ViewBag.ApplyDiscount" />
+Express:<input type="checkbox" checked="@ViewBag.ExpressShip" />
+Dostawca:<input type="checkbox" checked="@ViewBag.Supplier" />
+
+
+
