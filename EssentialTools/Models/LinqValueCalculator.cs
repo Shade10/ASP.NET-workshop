@@ -5,5 +5,9 @@ using System.Web;
 
 namespace EssentialTools.Models {
     public class LinqValueCalculator {
+        public decimal ValueProduct(IEnumerable<Product> products)
+        {
+            return products.Sum(p => p.Price);
+        }
     }
 }
