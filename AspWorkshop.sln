@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_myAsp", "_myAsp\_myAsp.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EssentialTools", "EssentialTools\EssentialTools.csproj", "{EA8D661E-8DC2-4A8C-9761-B437EA149E54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EssentialTools.Tests", "EssentialTools.Tests\EssentialTools.Tests.csproj", "{143F9F8E-BC46-49F1-8FB5-FE3EFBB45873}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EA8D661E-8DC2-4A8C-9761-B437EA149E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA8D661E-8DC2-4A8C-9761-B437EA149E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA8D661E-8DC2-4A8C-9761-B437EA149E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143F9F8E-BC46-49F1-8FB5-FE3EFBB45873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143F9F8E-BC46-49F1-8FB5-FE3EFBB45873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143F9F8E-BC46-49F1-8FB5-FE3EFBB45873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143F9F8E-BC46-49F1-8FB5-FE3EFBB45873}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
