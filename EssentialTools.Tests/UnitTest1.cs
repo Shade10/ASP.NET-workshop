@@ -27,8 +27,8 @@ namespace EssentialTools.Tests {
             decimal FiftyDollarDiscount = target.ApplyDiscount(50);
 
             Assert.AreEqual(5, TenDollarDiscount, "rabat w wysokości 10 zł jest nieprawidłowy");
-            Assert.AreEqual(95, TenDollarDiscount, "rabat w wysokości 100 zł jest nieprawidłowy");
-            Assert.AreEqual(45, TenDollarDiscount, "rabat w wysokości 50 zł jest nieprawidłowy");
+            Assert.AreEqual(95, HundredDollarDiscount, "rabat w wysokości 100 zł jest nieprawidłowy");
+            Assert.AreEqual(45, FiftyDollarDiscount, "rabat w wysokości 50 zł jest nieprawidłowy");
         }
 
         [TestMethod]
