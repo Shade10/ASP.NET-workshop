@@ -11,10 +11,10 @@ namespace EssentialTools.Infrastructure {
         private IKernel kernel;
 
         public NinjectDependencyResolver(IKernel kernelParam) {
-            kernel = kernelParam;
+            kernel = kernelParam
+;
             AddBindings();
         }
-
         public object GetService(Type serviceType) {
             return kernel.TryGet(serviceType);
         }
@@ -26,6 +26,7 @@ namespace EssentialTools.Infrastructure {
         private void AddBindings() {
             kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
             kernel.Bind<IDiscoutHelper>().To<DefaultDiscountHelper>().WithConstructorArgument("discountSize", 50M);
+            kernel.Bind<IDiscoutHelper>().To<FlexibleDiscountHelper>().WhenInjectedInto<LinqValueCalculator>();
         }
     }
 }
