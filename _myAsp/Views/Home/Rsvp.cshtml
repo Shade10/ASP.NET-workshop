@@ -4,5 +4,34 @@
     ViewBag.Title = "Rsvp";
 }
 
-<h2>Rsvp</h2>
+<div class="panel panel-success">
+    <div class="panel-heading text-center"><h2>RSVP</h2></div>
+    <div class="panel-body">
+        @using (Html.BeginForm()) {
+            @Html.ValidationSummary()
+            <div>
+                <label>Imię i nazwisko</label>
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            </div>
 
+            <div>
+                <label>E-mail</label>
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>telefon</label>
+                @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+            </div>
+
+            <div>
+                <label>Wybór uczestnicztwa</label>
+                @Html.DropDownListFor(x => x.WillAttend, new[]
+                {
+                    new SelectListItem(){Text = "Bedę na balu", Value = bool.TrueString},
+                    new SelectListItem(){Text = "Nie będzie mnie na balu", Value = bool.FalseString}
+                },"Wybierz opcję", new {@class ="form-control"})
+            </div>
+        }
+    </div>
+</div>
