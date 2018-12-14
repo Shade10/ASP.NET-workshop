@@ -1,0 +1,41 @@
+﻿@model _myAsp.Models.GuestResponse
+
+
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<head>
+    <style>
+        body {
+            background-color: F1F1F1;
+        }
+    </style>
+</head>
+
+@{
+    try
+    {
+        WebMail.SmtpServer = "smtp.cos.pl";
+        WebMail.SmtpPort = 587;
+        WebMail.EnableSsl = true;
+        WebMail.UserName = "Jan";
+        WebMail.Password = "passwd";
+        WebMail.From = "jan@cos.pl";
+
+        WebMail.Send("cos@wp.pl", "Powiadomienie RSVP", Model.Name + ((Model.WillAttend ?? false)? "" : "nie"),WebMail.From, null);
+    } catch (Exception) {
+        @: Przepraszamy nie można było wysłać wiadomości
+    }
+}
+
+<div class="text-center">
+    <h1>Dziękujemy @Model.Name</h1>
+    <div class="lead">
+        @if (Model.WillAttend == true) {
+            @: cieszymy się że będziesz
+        } else {
+            @: szkodza że cię nie będzie
+        }
+    </div>
+</div>

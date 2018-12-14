@@ -5,26 +5,23 @@ using System.Web;
 using System.Web.Mvc;
 using _myAsp.Models;
 
-namespace _myAsp.Controllers
-{
-    public class HomeController : Controller
-    {
+namespace _myAsp.Controllers {
+    public class HomeController : Controller {
         // GET: Home
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
             return View();
         }
 
         [HttpGet]
-        public ViewResult Rsvp()
-        {
+        public ViewResult Rsvp() {
             return View();
         }
 
         [HttpPost]
-        public ViewResult Rsvp(GuestResponse guestResponse)
-        {
-            return View(string.Format("rsvp"));
+        public ViewResult Rsvp(GuestResponse guestResponse) {
+            if (ModelState.IsValid) {
+                return View("Thanks", guestResponse);
+            } else return View(string.Format("rsvp"));
         }
     }
 }
