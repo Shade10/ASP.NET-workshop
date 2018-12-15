@@ -2,6 +2,7 @@
 using System.Linq;
 using EssentialTools.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace EssentialTools.Tests {
     [TestClass]
@@ -17,13 +18,27 @@ namespace EssentialTools.Tests {
 
         [TestMethod]
         public void Sum_Products_Correctly() {
-            var discounter = new MinimumDiscountHelper();
-            var target = new LinqValueCalculator(discounter);
-            var goalTotal = products.Sum(e => e.Price);
+
+            // before added Moq
+
+            //var discounter = new MinimumDiscountHelper();
+            //var target = new LinqValueCalculator(discounter);
+            //var goalTotal = products.Sum(e => e.Price);
+
+            // After added Moq
+
+            Mock<IDiscoutHelper> mock = new Mock<IDiscoutHelper>();
+            mock.Setup(m => m.ApplyDiscount(It.IsAny<decimal>())).Returns<decimal>(total => total);
+            var target = new LinqValueCalculator(mock.Object);
+
 
             var result = target.ValueProducts(products);
 
-            Assert.AreEqual(goalTotal, result);
+            // Before added mock
+            //Assert.AreEqual(goalTotal, result);
+
+            // After added Mock
+            Assert.AreEqual(products.Sum(e => e.Price), result);
         }
     }
 }
