@@ -6,8 +6,15 @@ using System.Web.Mvc;
 
 namespace DebuggingDemo.Controllers {
     public class HomeController : Controller {
-        public ActionResult Index() {
-            return View();
+        public ActionResult Index()
+        {
+            int firstVal = 10;
+            int secondVal = 5;
+            int result = firstVal / secondVal;
+
+            ViewBag.Message = "Witamy w świecie ASP.NET MVC!";
+
+            return View(result);
         }
 
         public ActionResult About() {
