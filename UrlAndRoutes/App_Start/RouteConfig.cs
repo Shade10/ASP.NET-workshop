@@ -36,9 +36,18 @@ namespace UrlAndRoutes {
 
             //routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}", new { controller = "Home", action = "Index", id = UrlParameter.Optional });
 
-            routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",
+            //routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            //    new[] { "UrlAndRoutes.AdditionalControllers" });
+
+            //routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            //    new[] { "UrlAndRoutes.Controllers" });
+
+            Route myRoute = routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 new[] { "UrlAndRoutes.AdditionalControllers" });
+            myRoute.DataTokens["UseNameSpaceFallback"] = false;
         }
     }
 }
