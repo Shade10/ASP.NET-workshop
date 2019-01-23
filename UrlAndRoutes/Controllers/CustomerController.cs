@@ -21,12 +21,6 @@ namespace UrlAndRoutes.Controllers {
             return View("ActionName");
         }
 
-        public ActionResult CustomerVariable()
-        {
-            ViewBag.Controller = "Home";
-            ViewBag.Action = "CustomerVariable";
-            ViewBag.CustomerVariable = RouteData.Values["id"];
-            return View();
-        }
+
     }
 }
