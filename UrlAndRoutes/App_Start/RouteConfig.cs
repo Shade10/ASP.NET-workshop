@@ -30,7 +30,9 @@ namespace UrlAndRoutes {
 
             //routes.MapRoute("", "Public/{controller}/{action}", new { controller = "Home", action = "Index" });
 
-            routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = "DefaultId" });
+            //routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = "DefaultId" });
+
+            routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
     }
 }
