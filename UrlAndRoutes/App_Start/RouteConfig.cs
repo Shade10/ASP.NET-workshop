@@ -44,10 +44,15 @@ namespace UrlAndRoutes {
             //    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
             //    new[] { "UrlAndRoutes.Controllers" });
 
-            Route myRoute = routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
+            //Route myRoute = routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            //    new[] { "UrlAndRoutes.AdditionalControllers" });
+            //myRoute.DataTokens["UseNameSpaceFallback"] = false;
+
+            routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new { controller = "^H.*" },
                 new[] { "UrlAndRoutes.AdditionalControllers" });
-            myRoute.DataTokens["UseNameSpaceFallback"] = false;
         }
     }
 }
