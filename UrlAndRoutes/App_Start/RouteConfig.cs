@@ -19,16 +19,18 @@ namespace UrlAndRoutes {
             //Route myRoute = new Route("{controller}/{action}", new MvcRouteHandler());
             //routes.Add("MyRoute", myRoute);
 
-            routes.MapRoute("ShopSchema2", "Shop/OldAction", new { controller = "Home", action = "Index" });
+            //routes.MapRoute("ShopSchema2", "Shop/OldAction", new { controller = "Home", action = "Index" });
 
-            routes.MapRoute("ShopSchema", "Shop/{action}", new { controller = "Home" });
+            //routes.MapRoute("ShopSchema", "Shop/{action}", new { controller = "Home" });
 
-            routes.MapRoute("", "X{controller}/{action}");
+            //routes.MapRoute("", "X{controller}/{action}");
 
             //the same as above in comment
-            routes.MapRoute("MyRoute", "{controller}/{action}", new { controller = "Home", action = "Index" });
+            //routes.MapRoute("MyRoute", "{controller}/{action}", new { controller = "Home", action = "Index" });
 
-            routes.MapRoute("", "Public/{controller}/{action}", new { controller = "Home", action = "Index" });
+            //routes.MapRoute("", "Public/{controller}/{action}", new { controller = "Home", action = "Index" });
+
+            routes.MapRoute("MyRoute", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = "DefaultId" });
         }
     }
 }
