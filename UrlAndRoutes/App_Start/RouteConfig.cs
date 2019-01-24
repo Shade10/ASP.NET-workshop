@@ -54,9 +54,18 @@ namespace UrlAndRoutes {
             //    new { controller = "^H.*" },
             //    new[] { "UrlAndRoutes.AdditionalControllers" });
 
+            //routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+            //    new { controller = "^H.*", action = "^Index$|^About$" },
+            //    new[] { "UrlAndRoutes.AdditionalControllers" });
+
             routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new { controller = "^H.*", action = "^Index$|^About$" },
+                new {
+                    controller = "^H.*",
+                    action = "^Index$|^About$",
+                    httpMethod = new HttpMethodConstraint("GET")
+                },
                 new[] { "UrlAndRoutes.AdditionalControllers" });
         }
     }
