@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Routing.Constraints;
 using System.Web.Routing;
 
 namespace UrlAndRoutes {
@@ -64,9 +65,10 @@ namespace UrlAndRoutes {
                 new {
                     controller = "^H.*",
                     action = "^Index$|^About$",
-                    httpMethod = new HttpMethodConstraint("GET")
+                    httpMethod = new HttpMethodConstraint("GET"),
+                    id = new RangeRouteConstraint(10, 20)
                 },
                 new[] { "UrlAndRoutes.AdditionalControllers" });
-        }
+        }   
     }
 }
