@@ -66,7 +66,11 @@ namespace UrlAndRoutes {
                     controller = "^H.*",
                     action = "^Index$|^About$",
                     httpMethod = new HttpMethodConstraint("GET"),
-                    id = new RangeRouteConstraint(10, 20)
+                    id = new CompoundRouteConstraint(new IRouteConstraint[]
+                    {
+                        new AlphaRouteConstraint(), 
+                        new MinLengthRouteConstraint(6), 
+                    })
                 },
                 new[] { "UrlAndRoutes.AdditionalControllers" });
         }   
