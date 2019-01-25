@@ -61,10 +61,12 @@ namespace UrlAndRoutes {
             //    new { controller = "^H.*", action = "^Index$|^About$" },
             //    new[] { "UrlAndRoutes.AdditionalControllers" });
 
+            routes.MapMvcAttributeRoutes();
+
             routes.MapRoute("ChromeRoute", "{*catchall}",
                 new { controller = "Home", action = "Index" },
                 new { customConstraint = new UserAgentConstraint("Chrome") },
-                new[] { "UrlsAndRoutes.AdditionalControllers" });
+                new[] { "UrlAndRoutes.AdditionalControllers" });
 
             routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },

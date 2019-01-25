@@ -7,6 +7,7 @@ using System.Web.Mvc;
 namespace UrlAndRoutes.Controllers {
     public class CustomerController : Controller {
         // GET: Customer
+        [Route("Test")]
         public ActionResult Index() {
             ViewBag.Controller = "Customer";
             ViewBag.Action = "Index";
