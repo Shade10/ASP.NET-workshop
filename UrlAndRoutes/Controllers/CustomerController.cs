@@ -15,6 +15,12 @@ namespace UrlAndRoutes.Controllers {
             return View("ActionName");
         }
 
+        [Route("Users/Add/{user}/{id}")]
+        public string Create(string user, int id)
+        {
+            return string.Format("Użytkownik: {0}, ID: {1}", user, id);
+        }
+
         public ActionResult List() {
             ViewBag.Controller = "Customer";
             ViewBag.Action = "List";
