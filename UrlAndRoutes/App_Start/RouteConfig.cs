@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Routing.Constraints;
 using System.Web.Routing;
+using UrlAndRoutes.Infrastructure;
 
 namespace UrlAndRoutes {
     public class RouteConfig {
@@ -60,6 +61,11 @@ namespace UrlAndRoutes {
             //    new { controller = "^H.*", action = "^Index$|^About$" },
             //    new[] { "UrlAndRoutes.AdditionalControllers" });
 
+            routes.MapRoute("ChromeRoute", "{*catchall}",
+                new { controller = "Home", action = "Index" },
+                new { customConstraint = new UserAgentConstraint("Chrome") },
+                new[] { "UrlsAndRoutes.AdditionalControllers" });
+
             routes.MapRoute("AddControllerRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 new {
@@ -68,11 +74,11 @@ namespace UrlAndRoutes {
                     httpMethod = new HttpMethodConstraint("GET"),
                     id = new CompoundRouteConstraint(new IRouteConstraint[]
                     {
-                        new AlphaRouteConstraint(), 
-                        new MinLengthRouteConstraint(6), 
+                        new AlphaRouteConstraint(),
+                        new MinLengthRouteConstraint(6),
                     })
                 },
                 new[] { "UrlAndRoutes.AdditionalControllers" });
-        }   
+        }
     }
 }
