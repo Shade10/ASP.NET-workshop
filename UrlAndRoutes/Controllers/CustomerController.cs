@@ -15,10 +15,15 @@ namespace UrlAndRoutes.Controllers {
             return View("ActionName");
         }
 
-        [Route("Users/Add/{user}/{id}")]
+        [Route("Users/Add/{user}/{id:int}")]
         public string Create(string user, int id)
         {
             return string.Format("Użytkownik: {0}, ID: {1}", user, id);
+        }
+
+        [Route("Users/Add/{user}/{password:alpha:length(6)}")]
+        public string ChangePass(string user, string password) {
+            return string.Format("Metoda ChangePass - użytkownik: {0}, hasło: {1}", user, password);
         }
 
         public ActionResult List() {
